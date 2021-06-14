@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>Django E-Commerce</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<link rel="stylesheet" href="{% static 'assets/bootstrap.min.css' %}" media="screen" />
-	<link rel="stylesheet" href="{% static 'assets/custom.min.css' %}" media="screen" />
+	<link rel="stylesheet" href="assets/bootstrap.min.css" media="screen" />
+	<link rel="stylesheet" href="assets/custom.min.css" media="screen" />
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -45,7 +44,7 @@
     </div>
     <div class="container">
 		<div class="jumbotron page-header">
-		  <h1>{{ title|capfirst }}</h1>
+		  <h1>Django E-Commerce</h1>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		  <p><a class="btn btn-primary">Saiba mais</a></p>
 		</div>
@@ -64,6 +63,6 @@
 		</footer>
 	</div>
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="{% static 'assets/bootstrap.min.js' %}"></script>
+    <script src="assets/bootstrap.min.js"></script>
 </body>
 </html>
