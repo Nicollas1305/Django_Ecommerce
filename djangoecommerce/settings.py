@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&6rj&ds@!e1jx=f+5u-m3g@@3(9zorep-3jbul81d+%mkf+v$6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -121,7 +121,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+
+SECUTE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#defField'ault-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAuto
