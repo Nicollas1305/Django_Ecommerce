@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import dj_database_url
 
 from pathlib import Path
 
@@ -24,7 +25,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = 'django-insecure-&6rj&ds@!e1jx=f+5u-m3g@@3(9zorep-3jbul81d+%mkf+v$6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'core',
+    'catalog',
 ]
 
 MIDDLEWARE = [
@@ -122,6 +124,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
