@@ -21,6 +21,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    objects = None
     name = models.CharField('Nome', max_length=100)
     slug = models.SlugField('Identificador', max_length=100)
     category = models.ForeignKey('catalog.Category', on_delete=models.CASCADE, verbose_name='Categoria')

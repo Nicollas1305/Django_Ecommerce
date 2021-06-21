@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.conf.urls import url, include
 
 from core import views
+from catalog import views as views_catalog
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^contato/$', views.contact, name='contact'),
     url(r'^produto/$', views.product, name='product'),
-    url(r'^produtos/', include('catalog.urls', namespace=catalog)),
+    url(r'^produtos/', include('catalog.urls', namespace='catalog')),
     url('admin/', admin.site.urls),
 ]
