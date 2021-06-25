@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'widget_tweaks',
+
     'core',
     'catalog',
 ]
@@ -128,6 +130,9 @@ DATABASES['default'].update(db_from_env)
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+EMAIL_HOST = ''
+DEFAUL_FROM_EMAIL = 'cartola1320@gmail.com'
 
 try:
     from .local_settings import *
